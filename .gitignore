@@ -1,5 +1,26 @@
-xmonad.errors
-xmonad.hi
-xmonad.o
-xmonad-x86_64-linux
+*
 
+!.gitignore
+
+# Init files
+!.zshrc
+!.xinitrc
+
+# Application configs
+!.config/
+
+!.config/mimeapps.list
+
+!.config/alacritty
+!.config/alacritty/*
+
+!.config/htop
+!.config/htop/*
+
+!.tmux.conf
+
+!.xmonad/
+.xmonad/*
+!.xmonad/xmonad.hs
+
+!.xmobarrc
