@@ -17,10 +17,27 @@
 !.config/htop
 !.config/htop/*
 
+!.config/VSCodium
+!.config/VSCodium/User
+!.config/VSCodium/User/settings.json
+
+!.sbt
+!.sbt/1.0
+!.sbt/1.0/plugins
+!.sbt/1.0/plugins/plugins.sbt
+
+!.spacemacs
+
 !.tmux.conf
+
+!.tmux.conf
+
+!.xmobarrc
 
 !.xmonad/
 .xmonad/*
 !.xmonad/xmonad.hs
 
-!.xmobarrc
+!.xprofile
+
+!.zshrc
