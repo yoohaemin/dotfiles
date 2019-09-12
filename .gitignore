@@ -27,7 +27,9 @@
 
 !.tmux.conf
 
-!.tmux.conf
+!.uim.d
+!.uim.d/customs
+!.uim.d/customs/*
 
 !.xmobarrc
 
