@@ -31,32 +31,41 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     typescript
+     rust
      yaml
-     helm
-     auto-completion
-     better-defaults
-     emacs-lisp
-     git
-     markdown
-     org
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
-     spell-checking
-     syntax-checking
-     version-control
      csv
-     scala-lsp
+     ;; ----------------------------------------------------------------
+     ;; Example of useful layers you may want to use right away.
+     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
+     ;; <M-m f e R> (Emacs style) to install them.
+     ;; ----------------------------------------------------------------
+     helm
+     ;; auto-completion
+     ;; better-defaults
+     emacs-lisp
+     ;; git
+     ;; markdown
+     org
+     ;; (shell :variables
+     ;;        shell-default-height 30
+     ;;        shell-default-position 'bottom)
+     ;; spell-checking
+     ;; syntax-checking
+     ;; version-control
+     scala
      sql
      javascript
      haskell
+     erlang
+     clojure
      c-c++
      sml
      markdown
+     git
      github
      html
      restclient
+     ess
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -140,8 +149,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("D2coding"
-                               :size 15
+   dotspacemacs-default-font '("D2Coding"
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -320,7 +329,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; Korean input configuration
   (global-set-key (kbd "<Hangul>") 'toggle-input-method)
   (setq default-input-method 'korean-hangul)
-  (setq create-lockfiles nil)
   )
 
 (defun dotspacemacs/user-config ()
@@ -330,7 +338,17 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+
+  (setq ensime-startup-notification nil)
+  (setq ensime-startup-snapshot-notification-3 nil)
+  (setq js2-strict-missing-semi-warning nil)
+  (setq create-lockfiles nil)
   )
+
+
+
+  
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -342,10 +360,15 @@ you should place your code here."
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (tide typescript-mode yaml-mode ob-sml xterm-color unfill sql-indent shell-pop org-category-capture alert log4e gntp sml-mode mwim multi-term mmm-mode magit-popup lsp-scala lsp-mode markdown-mode skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors js2-mode helm-company helm-c-yasnippet haml-mode gitignore-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh marshal logito pcache ht fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck-haskell flycheck evil-magit magit transient git-commit with-editor eshell-z eshell-prompt-extras esh-help diff-hl csv-mode company-web web-completion-data company-tern dash-functional tern company-statistics company-restclient restclient know-your-http-well ghc haskell-mode company-cabal company-c-headers company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete spinner evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu evil undo-tree adaptive-wrap powerline request org-plus-contrib lv parent-mode projectile pkg-info epl flx highlight eval-sexp-fu f dash s bind-key packed helm avy helm-core popup async paradox goto-chg ws-butler winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tagedit spaceline smeargle smartparens slim-mode scss-mode scala-mode sbt-mode sass-mode restclient-helm restart-emacs rainbow-delimiters pug-mode popwin persp-mode pcre2el orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets open-junk-file ob-restclient ob-http noflet neotree move-text markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode linum-relative link-hint json-mode js2-refactor js-doc intero indent-guide hydra hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-ag haskell-snippets google-translate golden-ratio gnuplot github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-unimpaired evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-escape erlang emmet-mode elisp-slime-nav eclim dumb-jump disaster diminish define-word company-ghci company-ghc column-enforce-mode coffee-mode cmm-mode cmake-mode clojure-mode clean-aindent-mode clang-format cider-eval-sexp-fu bind-map auto-highlight-symbol auto-compile aggressive-indent ace-window ace-link ace-jump-helm-line))))
+    (transient lv parseedn parseclj a popup toml-mode racer pos-tip cargo rust-mode yaml-mode sesman ess-smart-equals ess-R-data-view ctable ess julia-mode avy helm helm-core async powerline org-category-capture alert log4e gntp org-mime sml-mode restclient markdown-mode skewer-mode simple-httpd json-snatcher json-reformat js2-mode flycheck parent-mode projectile request haml-mode gitignore-mode gh marshal logito pcache ht flx magit magit-popup git-commit ghub let-alist with-editor smartparens iedit anzu evil goto-chg undo-tree f dash diminish ghc company haskell-mode hydra inflections edn multiple-cursors paredit yasnippet s peg eval-sexp-fu highlight cider seq spinner queue pkg-info clojure-mode epl bind-map bind-key packed csv-mode ensime org-plus-contrib sbt-mode scala-mode ws-butler winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen utop use-package tuareg toc-org tagedit sql-indent spaceline smeargle slim-mode scss-mode sass-mode restclient-helm restart-emacs rainbow-delimiters pug-mode popwin persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-download org-bullets open-junk-file ocp-indent ob-sml ob-restclient ob-http noflet neotree move-text mmm-mode merlin markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc intero info+ indent-guide hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-ag haskell-snippets google-translate golden-ratio gnuplot github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu erlang emmet-mode elisp-slime-nav eclim dumb-jump disaster define-word company-ghci company-ghc column-enforce-mode coffee-mode cmm-mode cmake-mode clj-refactor clean-aindent-mode clang-format cider-eval-sexp-fu auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
+ '(safe-local-variable-values
+   (quote
+    ((haskell-process-use-ghci . t)
+     (haskell-indent-spaces . 4)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
