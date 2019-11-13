@@ -40,3 +40,6 @@
 !.xprofile
 
 !.zshrc
+
+# Convenience scripts
+!toggle-touchpad.sh
