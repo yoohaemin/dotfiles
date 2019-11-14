@@ -3,5 +3,7 @@
     "workbench.colorTheme": "Solarized Light",
     "window.zoomLevel": 0,
     "editor.minimap.enabled": false,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontFamily": "'D2Coding', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 12
 }
