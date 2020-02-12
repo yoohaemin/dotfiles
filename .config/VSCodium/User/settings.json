@@ -3,5 +3,8 @@
     "workbench.colorTheme": "Solarized Light",
     "window.zoomLevel": 0,
     "editor.minimap.enabled": false,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "metals.javaHome": "/nix/store/sy3nacrqki115zaxf3sair2l45q8hk16-openjdk-11.0.4-ga/",
+    "dotty.trace.machineId": "9c15851e-fc4b-4efe-91ef-52d9e72b3ea8",
+    "editor.tabSize": 2
 }

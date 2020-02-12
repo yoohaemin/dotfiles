@@ -42,7 +42,7 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     ;; auto-completion
+     auto-completion
      ;; better-defaults
      emacs-lisp
      org
@@ -67,6 +67,7 @@ values."
      html
      ;;restclient
      ;;ess
+     (latex :variables latex-build-command "LaTeX" latex-enable-auto-fill t latex-enable-folding t)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these

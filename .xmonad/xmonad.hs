@@ -41,6 +41,7 @@ myConfig = defaultConfig
 
              myKeys = [ (("M4-f"), spawn "firefox")
                       , (("M4-S-t"), spawn "sh /home/haemin/toggle-touchpad.sh")
+                      , (("M4-S-n"), spawn "nm-connection-editor")
                       , (("M4-a"), spawn "idea-community")
                       , (("M4-p"), spawn "dmenu_run")
                       , (("M4-z"), kill)
